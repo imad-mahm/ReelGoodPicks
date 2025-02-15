@@ -1,0 +1,131 @@
+/* Reset default margin & padding */
+body,
+ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  /* Dark Cinematic Background */
+  color: #ffffff;
+  /* White text for contrast */
+}
+
+/* Header Styling */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1f1f1f;
+  /* Slightly lighter black */
+  color: #ffcc00;
+  /* Golden Yellow */
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #000000;
+  /* Pure Black */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 0;
+  height: 40px;
+}
+
+/* Make List Horizontal */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Center items */
+  padding: 0;
+  height: 40px;
+}
+
+/* Style Navigation Items */
+nav ul li {
+  margin: 0 20px;
+}
+
+/* Style Navigation Links */
+nav ul li a {
+  text-decoration: none;
+  color: #ffcc00;
+  /* Golden Yellow */
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+  /* Netflix Red on hover */
+  animation: zoomAndcolor 0.2s ease-in forwards;
+  /* Slight zoom effect */
+}
+
+@keyframes zoomAndcolor {
+  0% {
+    font-size: 18px;
+  }
+  100% {
+    font-size: 20px;
+    color: #e50914;
+    /* Netflix Red */
+  }
+}
+
+/* Main Content Styling */
+main {
+  margin-top: 150px;
+  /* Prevents content from being hidden under navbar */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styling for Paragraphs */
+p {
+  font-size: 20px;
+  color: #d3d3d3;
+  /* Light gray for readability */
+}
+
+/* Movie Image Styling */
+img {
+  width: 60%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 20px rgba(255, 204, 0, 0.5);
+  /* Golden glow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
+button {
+  background-color: #e50914;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #ffcc00;
+  color: black;
+}
