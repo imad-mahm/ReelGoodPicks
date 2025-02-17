@@ -16,7 +16,7 @@ document
       alert("Please fill in all fields.");
     } else if (username === validUsername && password === validPassword) {
       alert("Login successful! Redirecting to dashboard...");
-      window.location.href = "dashboard.html";
+      window.location.href = "index(nour).html";
     } else if (username !== validUsername && password !== validPassword) {
       alert("Invalid username and password.");
       usernameInput.value = "";
