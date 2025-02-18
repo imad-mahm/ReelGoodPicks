@@ -48,8 +48,14 @@ nav ul {
 }
 
 /* Style Navigation Items */
-nav ul li {
+li {
   margin: 0 20px;
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  padding: 0; /* Remove padding */ 
+  font: inherit; /* Use the same font as the parent */
+  color: inherit; /* Use the same text color as the parent */
+  cursor: pointer;
 }
 
 /* Style Navigation Links */
@@ -68,6 +74,7 @@ nav ul li a:hover {
   animation: zoomAndcolor 0.2s ease-in forwards;
   /* Slight zoom effect */
 }
+
 
 @keyframes zoomAndcolor {
   0% {
@@ -128,4 +135,5 @@ button {
 button:hover {
   background-color: #ffcc00;
   color: black;
+  
 }
