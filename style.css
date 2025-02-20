@@ -52,7 +52,7 @@ li {
   margin: 0 20px;
   background: none; /* Remove background */
   border: none; /* Remove border */
-  padding: 0; /* Remove padding */ 
+  padding: 0; /* Remove padding */
   font: inherit; /* Use the same font as the parent */
   color: inherit; /* Use the same text color as the parent */
   cursor: pointer;
@@ -74,7 +74,6 @@ nav ul li a:hover {
   animation: zoomAndcolor 0.2s ease-in forwards;
   /* Slight zoom effect */
 }
-
 
 @keyframes zoomAndcolor {
   0% {
@@ -130,10 +129,80 @@ button {
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
+  margin: 10px;
 }
 
 button:hover {
   background-color: #ffcc00;
   color: black;
-  
+}
+
+#login,
+#signup {
+  padding: 8px 15px;
+  font-size: 1.3em;
+}
+
+.login-container,
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  min-width: 16vw;
+  outline: #ffcc00 3px solid;
+  border: #aa8800 3px solid;
+  background-color: hsl(0, 0%, 11%);
+  border-radius: 20px;
+  padding: 50px 70px;
+  width: fit-content;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+label {
+  position: relative;
+  left: 10px;
+  font-size: 20px;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+#username,
+#password,
+#fullname,
+#email,
+#confirm-password {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ffcc00;
+  background-color: #fffcc8;
+}
+
+#loginForm,
+#signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#signupLink,
+#loginLink {
+  color: #ffffff;
+  font-weight: 100;
+  margin-top: 20px;
+  font-size: small;
+}
+
+#signupLink a,
+#loginLink a {
+  color: #ffcc00;
 }

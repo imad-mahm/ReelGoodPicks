@@ -6,9 +6,8 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body style="display: flex; justify-content: center; align-items: center; height: 100vh;"></body>
     <div class="login-container">
-      <h2>Login</h2>
       <form id="loginForm">
         <div class="input-group">
           <label for="username">Username</label>
@@ -18,11 +17,12 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password" required />
         </div>
-        <button type="submit">Login</button>
+        <button id="login" type="submit">Login</button>
       </form>
-      <p>Don't have an account? <a href="./signup.html">Sign up</a></p>
+      <p id="signupLink">
+        Don't have an account? <a href="./signup.html">Sign up</a>
+      </p>
     </div>
-
     <script src="login.js"></script>
   </body>
 </html>

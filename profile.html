@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile - Movie Hub</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="header">
-    <div class="logo">Movie Hub</div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Movies</a></li>
-        <li><a href="random.html">Surprise Me!</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="watchlist.html">Watchlist</a></li>
-        <li><a href="trending.html">Trending</a></li>
-        <li><a href="toprated.html">Top Rated</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Movie Hub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">Movie Hub</div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Movies</a></li>
+          <li><a href="random.html">Surprise Me!</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="watchlist.html">Watchlist</a></li>
+          <li><a href="trending.html">Trending</a></li>
+          <li><a href="toprated.html">Top Rated</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main class="profile-page">
-    <!-- User Information -->
-    <div class="profile-info">
-      <img src="profile-picture.jpg" alt="Profile Picture" class="profile-pic">
-      <h2>Username</h2>
-      <p>Email: user@example.com</p>
-      <p>Bio: Movie enthusiast who loves comedies and action films!</p>
-    </div>
-
-    <!-- Watchlist -->
-    <div class="watchlist">
-      <h3>My Watchlist</h3>
-      <div class="movie-grid">
-        <!-- Dynamically populated watchlist movies -->
+    <main class="profile-page">
+      <!-- User Information -->
+      <div class="profile-info">
+        <img
+          src="profile-picture.jpg"
+          alt="Profile Picture"
+          class="profile-pic"
+        />
+        <h2>Username</h2>
+        <p>Email: user@example.com</p>
+        <p>Bio: Movie enthusiast who loves comedies and action films!</p>
       </div>
-    </div>
 
-    <!-- Favorite Genres -->
-    <div class="favorite-genres">
-      <h3>Favorite Genres</h3>
-      <ul>
-        <li>Comedy</li>
-        <li>Action</li>
-        <li>Drama</li>
-      </ul>
-    </div>
+      <!-- Watchlist -->
+      <div class="watchlist">
+        <h3>My Watchlist</h3>
+        <div class="movie-grid">
+          <!-- Dynamically populated watchlist movies -->
+        </div>
+      </div>
 
-    <!-- Account Settings -->
-    <div class="account-settings">
-      <h3>Account Settings</h3>
-      <form>
-        <label for="password">Change Password:</label>
-        <input type="password" id="password" name="password">
-        <button type="submit">Update Password</button>
-      </form>
-      <button class="delete-account">Delete Account</button>
-      <button>Logout</button>
-    </div>
+      <!-- Favorite Genres -->
+      <div class="favorite-genres">
+        <h3>Favorite Genres</h3>
+        <ul>
+          <li>Comedy</li>
+          <li>Action</li>
+          <li>Drama</li>
+        </ul>
+      </div>
 
-  </main>
+      <!-- Account Settings -->
+      <div class="account-settings">
+        <h3>Account Settings</h3>
+        <form>
+          <label for="password">Change Password:</label>
+          <input type="password" id="password" name="password" />
+          <button type="submit">Update Password</button>
+        </form>
+        <button class="delete-account">Delete Account</button>
+        <button>Logout</button>
+      </div>
+    </main>
 
-  <script src="profile.js"></script>
-</body>
+    <script src="profile.js"></script>
+  </body>
 </html>
