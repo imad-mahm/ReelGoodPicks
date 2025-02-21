@@ -1,27 +1,49 @@
 /* Reset default margin & padding */
+body{
+  overflow-y:auto;
+  background-color: #121212;
+}
 body,
 ul {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: Arial, sans-serif;
   background-color: #121212;
   /* Dark Cinematic Background */
   color: #ffffff;
   /* White text for contrast */
+  
+}
+body header h1{
+  
+  font-size: 65px;
+  margin-top:30px;
+  margin-left: 30px;
+  display:flex;
+  align-content: center;
+}
+main{
+  background-color: #121212;
+}
+main h2{
+  display:flex;
+  align-items: center;
+  margin-left: 12px;
+  color: #cea135;
 }
 
 /* Header Styling */
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
-  background-color: #1f1f1f;
+  background-color: #121212;
   /* Slightly lighter black */
-  color: #ffcc00;
+  color: white;
   /* Golden Yellow */
   text-align: center;
   font-size: 24px;
+  
 }
 
 /* Navigation Bar */
@@ -56,39 +78,34 @@ li {
   font: inherit; /* Use the same font as the parent */
   color: inherit; /* Use the same text color as the parent */
   cursor: pointer;
+  list-style-type: none;
 }
 
 /* Style Navigation Links */
 nav ul li a {
   text-decoration: none;
-  color: #ffcc00;
+  color: white;
   /* Golden Yellow */
   font-size: 18px;
   font-weight: bold;
-  padding: 10px 15px;
-  transition: color 0.3s, transform 0.2s;
+  /* padding: 10px 10px; */
+  transition: 0.25s;
 }
 
 nav ul li a:hover {
-  /* Netflix Red on hover */
-  animation: zoomAndcolor 0.2s ease-in forwards;
-  /* Slight zoom effect */
+  font-size:23px;
+  color: #cea135;
 }
-
-@keyframes zoomAndcolor {
-  0% {
-    font-size: 18px;
-  }
-  100% {
-    font-size: 20px;
-    color: #e50914;
-    /* Netflix Red */
-  }
+nav ul li {
+  width:180px;
+  text-align: center;
+ 
+  
 }
 
 /* Main Content Styling */
 main {
-  margin-top: 150px;
+  /* margin-top: px; */
   /* Prevents content from being hidden under navbar */
   text-align: center;
   padding: 20px;
@@ -108,7 +125,6 @@ img {
   border-radius: 10px;
   margin-top: 20px;
   box-shadow: 0px 0px 20px rgba(255, 204, 0, 0.5);
-  /* Golden glow */
 }
 
 /* Responsive Design */
@@ -206,3 +222,32 @@ label {
 #loginLink a {
   color: #ffcc00;
 }
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.logo img {
+  width: 30px; 
+  height: auto;
+  margin-right: 8px;
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  box-shadow:none;
+
+}
+.dropdown{
+  margin-top:10px;
+  position: absolute;
+  left:-565px; 
+  top: 10px;
+}
+.container{
+  overflow:auto;
+}
+
+

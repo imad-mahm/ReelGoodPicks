@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation Test</title>
+    <link rel="icon" type="image/x-icon" href="images/Popcorn-icon.png" />
+    <link rel="stylesheet" href="style.css" />
+<head>
+    <div class="logo">
+        <img src="images/Popcorn-icon.png" alt="Popcorn-icon">
+        <li><span href="index.html">REELPICK</span></li>
+      </div>
+    <style>
+        .flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        .card {
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .space-y-2>* {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .btn-outline {
+            border: 1px solid #ccc;
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex">
+        <div id="questionCard" class="card">
+            <h2 id="questionText" class="text-xl"></h2>
+            <div id="optionsContainer" class="space-y-2"></div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "How is your mood today?", options: ["Happy", "Sad", "Excited", "Relaxed"] },
+            { question: "What is your favorite movie?", options: ["Inception", "Titanic", "Avengers", "Interstellar"] },
+            { question: "What genre do you usually enjoy?", options: ["Action", "Romance", "Sci-Fi", "Drama", "Comedy"] },
+            { question: "Do you prefer movies in Arabic or English?", options: ["Arabic", "English", "Both"] },
+            { question: "What rating do you usually look for?", options: ["7+", "8+", "9+"] }
+        ];
+
+        const movies = {
+            Comedy: ["The Hangover", "Superbad", "عسل أسود", "Al Sayida Al Thaneya", "اللمبي 8 جيجا"],
+            Action: ["Mad Max: Fury Road", "The Dark Knight", "الجزيرة", "مهمة في تبوك"],
+            Drama: ["The Insult", "The Pursuit of Happyness", "Forrest Gump", "باب الحديد", "الطريق"],
+            Romance: ["The Notebook", "Titanic", "أنت عمري", "الخرساء"],
+            "Action-Sci-Fi": ["The Matrix", "Inception"],
+            "Comedy-Action": ["Very Big Shot"],
+            "Comedy-Drama": ["Bghamdet Ain (بغمضة عين)"]
+        };
+
+        let step = 0;
+        let answers = [];
+
+        const questionText = document.getElementById('questionText');
+        const optionsContainer = document.getElementById('optionsContainer');
+
+        function loadQuestion() {
+            if (step < questions.length) {
+                const currentQuestion = questions[step];
+                questionText.textContent = currentQuestion.question;
+                optionsContainer.innerHTML = ''; // Clear previous options
+
+                currentQuestion.options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.textContent = option;
+                    button.classList.add('btn');
+                    button.addEventListener('click', () => handleAnswer(option));
+                    optionsContainer.appendChild(button);
+                });
+            } else {
+                const genre = answers[2]; // Genre question index
+                alert(`Redirecting to swipe game with recommended movies for genre: ${genre}`);
+                navigateToSwipeGame(genre);
+            }
+        }
+
+        function handleAnswer(option) {
+            answers.push(option);
+
+            if (step < questions.length - 1) {
+                step++;
+                loadQuestion();
+            } else {
+                const genre = answers[2]; // Genre question
+                alert(`Redirecting to swipe game with recommended movies for genre: ${genre}`);
+                navigateToSwipeGame(genre);
+            }
+        }
+
+        function navigateToSwipeGame(genre) {
+            // Redirect to the swipe game with the movie recommendations for the selected genre
+            const recommendedMovies = movies[genre] || [];
+            localStorage.setItem('recommendedMovies', JSON.stringify(recommendedMovies));
+            window.location.href = 'swipe.html'; // Change this to the actual URL of your swipe game page
+        }
+
+        loadQuestion(); // Load the first question
+    </script>
+</body>
+
+</html>
