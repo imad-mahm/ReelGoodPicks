@@ -229,6 +229,9 @@ label {
   font-weight: bold;
   color: white;
 }
+.logo li{
+  margin-left: 0px;;
+}
 
 .logo img {
   width: 30px; 
