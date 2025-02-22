@@ -2,6 +2,7 @@
 body{
   overflow-y:auto;
   background-color: #121212;
+  
 }
 body,
 ul {
@@ -24,6 +25,7 @@ body header h1{
 }
 main{
   background-color: #121212;
+  margin-top: 170px;
 }
 main h2{
   display:flex;
@@ -43,12 +45,13 @@ header {
   /* Golden Yellow */
   text-align: center;
   font-size: 24px;
+  height:175px;
   
 }
 
 /* Navigation Bar */
 nav {
-  background-color: #000000;
+  background-color: #121212;
   /* Pure Black */
   top: 0;
   left: 0;
@@ -56,6 +59,7 @@ nav {
   z-index: 1000;
   padding: 10px 0;
   height: 40px;
+  margin-top:10px;
 }
 
 /* Make List Horizontal */
@@ -86,14 +90,14 @@ nav ul li a {
   text-decoration: none;
   color: white;
   /* Golden Yellow */
-  font-size: 18px;
+  font-size: 23px;
   font-weight: bold;
   /* padding: 10px 10px; */
   transition: 0.25s;
 }
 
 nav ul li a:hover {
-  font-size:23px;
+  font-size:25px;
   color: #cea135;
 }
 nav ul li {
@@ -222,7 +226,7 @@ label {
 #loginLink a {
   color: #ffcc00;
 }
-.logo {
+/* .logo {
   display: flex;
   align-items: center;
   font-size: 24px;
@@ -242,20 +246,92 @@ label {
   margin-bottom: 8px;
   box-shadow:none;
 
-}
+} */
 .dropdown{
-  margin-top:10px;
+  margin-top:-10px;
   position: absolute;
-  left:-565px; 
-  top: 10px;
+  top: 5px; /* Adjust based on navbar height */
+  right: -700px; 
 }
 .container{
   overflow:auto;
 }
 #login{
-  margin-top:10px;
-  margin-bottom: 10px;
+  margin-top:18px;
+  margin-bottom: 5px;
   /* padding-top:0px; */
   padding-bottom: 0px;
+  margin-right:35px;
+}
+#btn1{
+  margin-top:8px;
+  background-color: #121212;
+  border: #121212;
+  font-weight:bold;
+  font-size: 20px;
+}
+#btn2{
+  color:#121212;
+  background-color: white;
+  border: white;
+  font-weight:bold;
+  font-size: 20px;
+}
+.reelpicks-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #121212;
+  padding: 10px 20px;
+}
+
+.reelpicks-logo {
+  display: flex;
+  align-items: center; /* Aligns image and text */
+  gap:0px; /* Adds space between the logo and text */
+}
+
+.reelpicks-logo img {
+  width: 33px; 
+  height: auto;
+  margin-right: 0px;
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  box-shadow:none;
+}
+
+.reelpicks-logo li {
+  list-style: none; /* Removes bullet point */
+}
+
+.reelpicks-brand {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.reelpicks-nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.reelpicks-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+#dropdownMenuButtonDark{
+  color:#121212;
+  font-size: 20px;
+  
+}
+.main-content{
+  margin-top:100px;
+}
+.index{
+  margin-top:-42px;
+  padding-top: 40px;
 }
 
