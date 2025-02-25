@@ -158,10 +158,10 @@ button:hover {
   color: black;
 }
 
-#login,
+#logIn,
 #signup {
   padding: 8px 15px;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .login-container,
