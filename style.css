@@ -1,5 +1,4 @@
 /* Reset default margin & padding */
-
 body,
 ul {
   margin: 0;
@@ -9,34 +8,31 @@ ul {
   /* Dark Cinematic Background */
   color: #ffffff;
   /* White text for contrast */
-  
 }
 
-body{
-  overflow-y:auto;
+body {
+  overflow-y: auto;
   background-color: #121212;
-  height:800px;
+  height: 800px;
   font-size: 24px;
-  
 }
 
-body header h1{
-  color:white;
+body header h1 {
+  color: white;
   font-size: 65px;
   /* margin-top:0px; */
   margin-left: 10px;
-  display:flex;
+  display: flex;
   align-content: center;
 }
-main{
+main {
   background-color: #121212;
   margin-top: 160px;
   /* padding-top: 35px; */
-  height:auto;
-  
+  height: auto;
 }
-main h2{
-  display:flex;
+main h2 {
+  display: flex;
   align-items: center;
   margin-left: 12px;
   color: #cea135;
@@ -45,7 +41,7 @@ main h2{
 /* Header Styling */
 header {
   position: absolute;
-  height:160px;
+  height: 160px;
   top: 0;
   width: 100%;
   background-color: #121212;
@@ -54,8 +50,6 @@ header {
   /* Golden Yellow */
   text-align: center;
   font-size: 24px;
- 
-  
 }
 
 /* Navigation Bar */
@@ -65,10 +59,10 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 2;
   padding: 10px 0;
   height: 40px;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 /* Make List Horizontal */
@@ -106,14 +100,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  font-size:25px;
+  font-size: 25px;
   color: #cea135;
 }
 nav ul li {
-  width:180px;
+  width: 180px;
   text-align: center;
- 
-  
 }
 
 /* Main Content Styling */
@@ -256,34 +248,34 @@ label {
   box-shadow:none;
 
 } */
-.dropdown{
-  margin-top:-10px;
+.dropdown {
+  margin-top: -10px;
   position: absolute;
   top: 5px; /* Adjust based on navbar height */
-  right: -700px; 
+  right: -700px;
 }
-.container{
-  overflow:auto;
+.container {
+  overflow: auto;
 }
-#login{
-  margin-top:18px;
+#login {
+  margin-top: 18px;
   margin-bottom: 5px;
   /* padding-top:0px; */
   padding-bottom: 0px;
-  margin-right:35px;
+  margin-right: 35px;
 }
-#btn1{
-  margin-top:8px;
+#btn1 {
+  margin-top: 8px;
   background-color: #121212;
   border: #121212;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 20px;
 }
-#btn2{
-  color:#121212;
+#btn2 {
+  color: #121212;
   background-color: white;
   border: white;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 20px;
 }
 .reelpicks-navbar {
@@ -297,17 +289,17 @@ label {
 .reelpicks-logo {
   display: flex;
   align-items: center; /* Aligns image and text */
-  gap:0px; /* Adds space between the logo and text */
+  gap: 0px; /* Adds space between the logo and text */
 }
 
 .reelpicks-logo img {
-  width: 33px; 
+  width: 33px;
   height: auto;
   margin-right: 0px;
   margin-left: 8px;
   margin-top: 8px;
   margin-bottom: 8px;
-  box-shadow:none;
+  box-shadow: none;
 }
 
 .reelpicks-logo li {
@@ -331,21 +323,180 @@ label {
   text-decoration: none;
   font-weight: bold;
 }
-#dropdownMenuButtonDark{
-  color:#121212;
+#dropdownMenuButtonDark {
+  color: #121212;
   font-size: 20px;
-  
 }
-.main-content{
-  margin-top:100px;
+.main-content {
+  margin-top: 100px;
 }
 
-.copyright-wrapper{
-  background-color:#cea135;
-  color:#121212;
-  height:100px;
-  display:flex;
+.copyright-wrapper {
+  background-color: #cea135;
+  color: #121212;
+  height: 100px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
+/* From Uiverse.io by Smit-Prajapati */
+.card {
+  position: relative;
+  width: 200px;
+  min-height: 200px;
+  height: 300px;
+  background: lightgrey;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 1s ease-in-out;
+}
 
+.background {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 100% 107%,
+    #ff89cc 0%,
+    #9cb8ec 30%,
+    #00ffee 60%,
+    #62c2fe 100%
+  );
+}
+
+.logo {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  transition: all 0.6s ease-in-out;
+}
+
+.logo .logo-svg {
+  color: white;
+  width: 150px;
+}
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.icon .svg {
+  fill: rgba(255, 255, 255, 0.797);
+  transition: all 0.5s ease-in-out;
+}
+
+.box {
+  position: absolute;
+  padding: 10px;
+  text-align: right;
+  background: rgba(255, 255, 255, 0.389);
+  border-top: 2px solid rgb(255, 255, 255);
+  border-right: 1px solid white;
+  border-radius: 10% 13% 42% 0%/10% 12% 75% 0%;
+  box-shadow: rgba(100, 100, 111, 0.364) -7px 7px 29px 0px;
+  transform-origin: bottom left;
+  transition: all 1s ease-in-out;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.box:hover .svg {
+  fill: white;
+}
+
+.box1 {
+  width: 70%;
+  height: 70%;
+  bottom: -70%;
+  left: -70%;
+}
+
+.box1::before {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #ff53d4 60%,
+    #62c2fe 90%
+  );
+}
+
+.box1:hover::before {
+  opacity: 1;
+}
+
+.box1:hover .icon .svg {
+  filter: drop-shadow(0 0 5px white);
+}
+
+.box2 {
+  width: 50%;
+  height: 50%;
+  bottom: -50%;
+  left: -50%;
+  transition-delay: 0.2s;
+}
+
+.box2::before {
+  background: radial-gradient(circle at 30% 107%, #91e9ff 0%, #00acee 90%);
+}
+
+.box2:hover::before {
+  opacity: 1;
+}
+
+.box2:hover .icon .svg {
+  filter: drop-shadow(0 0 5px white);
+}
+
+.box3 {
+  width: 30%;
+  height: 30%;
+  bottom: -30%;
+  left: -30%;
+  transition-delay: 0.4s;
+}
+
+.box3::before {
+  background: radial-gradient(circle at 30% 107%, #969fff 0%, #b349ff 90%);
+}
+
+.box3:hover::before {
+  opacity: 1;
+}
+
+.box3:hover .icon .svg {
+  filter: drop-shadow(0 0 5px white);
+}
+
+.box4 {
+  width: 10%;
+  height: 10%;
+  bottom: -10%;
+  left: -10%;
+  transition-delay: 0.6s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card:hover .box {
+  bottom: -1px;
+  left: -1px;
+}
+
+.card:hover .logo {
+  transform: translate(00, 00);
+  top: 20px;
+  right: 20px;
+}
