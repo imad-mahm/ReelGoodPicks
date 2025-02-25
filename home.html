@@ -6,9 +6,16 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body style="display: flex; justify-content: center; align-items: center; height: 100vh;"></body>
+  <body
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    "
+  >
     <div class="login-container">
-      <form id="loginForm">
+      <form id="loginForm" action="dashboard.html" method="POST">
         <div class="input-group">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" required />
