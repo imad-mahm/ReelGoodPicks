@@ -162,6 +162,8 @@ button:hover {
 #signup {
   padding: 8px 15px;
   font-size: 1.2em;
+  color: white;
+  text-decoration: none;
 }
 
 .login-container,
