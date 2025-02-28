@@ -20,7 +20,7 @@ body {
 body header h1 {
   color: white;
   font-size: 65px;
-  /* margin-top:0px; */
+  margin-top: 10px;
   margin-left: 10px;
   display: flex;
   align-content: center;
@@ -40,8 +40,9 @@ main h2 {
 
 /* Header Styling */
 header {
+  margin-top: 50px;
   position: absolute;
-  height: 160px;
+  height: 170px;
   top: 0;
   width: 100%;
   background-color: #121212;
@@ -62,7 +63,6 @@ nav {
   z-index: 2;
   padding: 10px 0;
   height: 40px;
-  margin-top: 10px;
 }
 
 /* Make List Horizontal */
@@ -267,7 +267,7 @@ label {
   margin-right: 35px;
 }
 #btn1 {
-  margin-top: 8px;
+  /* margin-top: 8px; */
   background-color: #121212;
   border: #121212;
   font-weight: bold;
