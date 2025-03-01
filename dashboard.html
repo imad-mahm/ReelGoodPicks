@@ -1,70 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - Movie Hub</title>
     <link rel="icon" type="image/x-icon" href="images/clapperboard.png">
     <link rel="stylesheet" href="style.css" />
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-  <body>
-    
+<body>
     <!-- Header -->
     <header class="header">
-      <div class="reelpicks-navbar">
-        <div class="reelpicks-logo">
-            <img src="images/Popcorn-icon.png" alt="Popcorn-icon">
-            <li><a href="index.html" class="reelpicks-brand">REELPICKS</a></li>
+        <div class="reelpicks-navbar">
+            <div class="reelpicks-logo">
+                <img src="images/Popcorn-icon.png" alt="Popcorn-icon">
+                <li><a href="index.html" class="reelpicks-brand">REELPICKS</a></li>
+            </div>
+            <h1>🎬 Movies 🎬</h1>
+            <div class="reelpicks-nav-links">
+                <a href="index.html" class="reelpicks-link">Home</a>
+                <a href="profile.html" class="reelpicks-link">Profile</a>
+                <a href="about.html" class="reelpicks-link">About Us</a>
+            </div>
         </div>
-        <h1>🎬 Movies 🎬</h1>
-        <div class="reelpicks-nav-links">
-            <a href="index.html" class="reelpicks-link">Home</a>
-            <a href="profile.html" class="reelpicks-link">Profile</a>
-            <a href="about.html" class="reelpicks-link">About Us</a>
-        </div>
-    </div>
 
-      <div class="dropdown" data-bs-theme="dark">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:white; border-radius: 20px;">
-          Menu 
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
-          <!-- <li><a class="dropdown-item active" href="dashboard.html">Movies</a></li> -->
-          <li><a class="dropdown-item" href="random.html">Surprise Me</a></li>
-          <li><a class="dropdown-item" href="watchlist.html">Watchlist</a></li>
-          <li><a class="dropdown-item" href="trending.html">Trending</a></li>
-          <li><a class="dropdown-item" href="toprated.html">Top Rated</a></li>
-          <!-- <li><a class="dropdown-item" href="swipe.html">swipe</a></li> -->
-          <li><a class="dropdown-item" href="test.html">Test Me</a></li>
-        </ul>
-      </div>
+        <div class="dropdown" data-bs-theme="dark">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark"
+                data-bs-toggle="dropdown" aria-expanded="false" style="background-color:white; border-radius: 20px;">
+                Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+                <li><a class="dropdown-item" href="random.html">Surprise Me</a></li>
+                <li><a class="dropdown-item" href="watchlist.html">Watchlist</a></li>
+                <li><a class="dropdown-item" href="trending.html">Trending</a></li>
+                <li><a class="dropdown-item" href="toprated.html">Top Rated</a></li>
+                <li><a class="dropdown-item" href="test.html">Test Me</a></li>
+            </ul>
+        </div>
     </header>
 
-    <!-- Sidebar for Genres -->
-    <nav class="genre-nav">
-        <ul>
-          <li><a href="#" data-genre="all">All</a></li>
-          <li><a href="#" data-genre="comedy">Comedy</a></li>
-          <li><a href="#" data-genre="action">Action</a></li>
-          <li><a href="#" data-genre="drama">Drama</a></li>
-          <li><a href="#" data-genre="romance">Romance</a></li>
-          <li><a href="#" data-genre="sci-fi">Sci-Fi</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a href="genre.html?genre=All">All Movies</a></li>
+        <li><a href="genre.html?genre=Romance">Romance</a></li>
+        <li><a href="genre.html?genre=Comedy">Comedy</a></li>
+        <li><a href="genre.html?genre=Sci-Fi">Sci-Fi</a></li>
+        <li><a href="genre.html?genre=Horror">Horror</a></li>
+        <li><a href="genre.html?genre=Thriller">Thriller</a></li>
+        <li><a href="genre.html?genre=Action">Action</a></li>
+        <li><a href="genre.html?genre=Adventure">Adventure</a></li>
+        <li><a href="genre.html?genre=Drama">Drama</a></li>
+    </ul>
 
-    <!-- Main Content - Movies Section -->
-    <main class="main-content">
-      <h2>All Movies</h2>
-      <div class="movie-grid" id="movie-grid">
-        <!-- Movie cards will be dynamically inserted here -->
-      </div>
-    </main>
+    <div id="resultContainer" class="hidden">
+        <h2>Recommended Movies</h2>
+        <ul id="movieList"></ul>
+    </div>
 
-    <script src="moviegenres.js"></script>
-  </body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="moviesgenres.js"></script>
+</body>
+
 </html>
