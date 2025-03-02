@@ -180,9 +180,9 @@ if (genreTitle !== null && movieList !== null)
 let usernameInput = document.getElementById("username");
 let passwordInput = document.getElementById("password");
 
-document
-  .getElementById("loginForm")
-  .addEventListener("submit", function (event) {
+const loginForm = document.getElementById("loginForm");
+if (loginForm !== null)
+  loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     username = usernameInput.value;
@@ -195,7 +195,7 @@ document
       alert("Please fill in all fields.");
     } else if (username === validUsername && password === validPassword) {
       alert("Login successful! Redirecting to dashboard...");
-      window.location.href = "dashboard.html";
+      window.location.href = "index.html";
     } else if (username !== validUsername && password !== validPassword) {
       alert("Invalid username and password.");
       usernameInput.value = "";
