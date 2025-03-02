@@ -77,35 +77,8 @@
       &copy; 2024 Reel Good Pick &#124; All rights reserved
     </div>
   </body>
+  <script src="js/script.js"></script>
   <script>
-    const recommendedMovies =
-      JSON.parse(localStorage.getItem("recommendedMovies")) || [];
-    let index = 0;
-
-    const movieTitle = document.getElementById("movieTitle");
-    const yesButton = document.getElementById("yesButton");
-    const noButton = document.getElementById("noButton");
-
-    function displayMovie() {
-      if (recommendedMovies.length > 0) {
-        movieTitle.textContent = recommendedMovies[index];
-      } else {
-        movieTitle.textContent = "No movies available";
-      }
-    }
-
-    function handleSwipe() {
-      if (index < recommendedMovies.length - 1) {
-        index++;
-        displayMovie();
-      } else {
-        alert("No more movies to recommend!");
-      }
-    }
-
-    yesButton.addEventListener("click", handleSwipe);
-    noButton.addEventListener("click", handleSwipe);
-
     displayMovie(); // Display the first movie
   </script>
 </html>
