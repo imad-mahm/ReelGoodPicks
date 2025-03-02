@@ -9,7 +9,7 @@ const questions = [
   },
   {
     question: "What genre do you usually enjoy?",
-    options: ["Action", "Romance", "Sci-Fi", "Drama", "Comedy"],
+    options: ["Action", "Romance", "Sci-Fi", "Drama", "Comedy", "Horror"],
   },
   {
     question: "Do you prefer movies in Arabic or English?",
@@ -155,18 +155,6 @@ if (genreTitle !== null && movieList !== null)
               <h3 class="movie-title">${movie.title}</h3>
               <p class="movie-description">${movie.description}</p>
           `;
-
-        // Add click event to toggle description
-        // const movieTitle = movieCard.querySelector(".movie-title");
-        // const movieDescription = movieCard.querySelector(".movie-description");
-
-        // movieTitle.addEventListener("mouseover", () => {
-        //   if (movieDescription.style.display === "none") {
-        //     movieDescription.style.display = "block";
-        //   } else {
-        //     movieDescription.style.display = "none";
-        //   }
-        // });
 
         movieList.appendChild(movieCard);
       });

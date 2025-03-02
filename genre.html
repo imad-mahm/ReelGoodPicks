@@ -8,6 +8,78 @@
   </head>
 
   <body>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButtonDark"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="border-radius: 20px"
+            >
+              Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+              <!-- <li><a class="dropdown-item active" href="dashboard.html">Movies</a></li> -->
+              <li>
+                <a class="dropdown-item" href="random.html">Surprise Me</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="watchlist.html">Watchlist</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="trending.html">Trending</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="toprated.html">Top Rated</a>
+              </li>
+              <!-- <li><a class="dropdown-item" href="swipe.html">swipe</a></li> -->
+              <li><a class="dropdown-item" href="test.html">Test Me</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <header class="header">
+      <!-- <div class="reelpicks-navbar">
+        <div class="reelpicks-logo">
+          <img src="images/Popcorn-icon.png" alt="Popcorn-icon" />
+          <li>
+            <a href="index.html" class="reelpicks-brand">REEL GOOD PICKS</a>
+          </li>
+        </div>
+        <h1>🎬 Movies 🎬</h1>
+        <div class="reelpicks-nav-links">
+          <a href="index.html" class="reelpicks-link">Home</a>
+          <a href="profile.html" class="reelpicks-link">Profile</a>
+          <a href="about.html" class="reelpicks-link">About Us</a>
+        </div>
+      </div> -->
+      <div
+        style="position: absolute; align-items: center; width: 50%; right: 10px"
+        class="d-grid gap-2 d-md-flex justify-content-md-end"
+        id="login"
+      >
+        <a href="login.html"
+          ><button class="btn btn-primary" id="btn1" type="button">
+            Login
+          </button></a
+        >
+        <a href="signup.html">
+          <button class="btn btn-primary" id="btn2" type="button">
+            Sign up
+          </button></a
+        >
+      </div>
+      <h1><b>MOVIES</b></h1>
+    </header>
+
     <main class="main-content">
       <h1 id="genreTitle">Movies in this Genre</h1>
       <div id="movieList"></div>
