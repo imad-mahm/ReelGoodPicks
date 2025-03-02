@@ -117,60 +117,65 @@ function handleSwipe() {
     alert("No more movies to recommend!");
   }
 }
-yesButton.addEventListener("click", handleSwipe);
-noButton.addEventListener("click", handleSwipe);
+if (movieTitle !== null && yesButton !== null && noButton !== null) {
+  yesButton.addEventListener("click", handleSwipe);
+  noButton.addEventListener("click", handleSwipe);
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  const genre = urlParams.get("genre");
+const genreTitle = document.getElementById("genreTitle");
+const movieList = document.getElementById("movieList");
+if (genreTitle !== null && movieList !== null)
+  document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const genre = urlParams.get("genre");
 
-  const genreTitle = document.getElementById("genreTitle");
-  genreTitle.textContent = genre + " Movies";
+    genreTitle.textContent = genre + " Movies";
 
-  const movieList = document.getElementById("movieList");
-  movieList.innerHTML = ""; // Clear previous content
+    movieList.innerHTML = ""; // Clear previous content
 
-  let filteredMovies;
+    let filteredMovies;
 
-  if (genre === "All") {
-    filteredMovies = movies;
-  } else {
-    filteredMovies = movies.filter((movie) => {
-      const genres = movie.genres.split(", "); // Split genres into an array
-      return genres.includes(genre); // Check if the genre is in the array
-    });
-  }
+    if (genre === "All") {
+      filteredMovies = movies;
+    } else {
+      filteredMovies = movies.filter((movie) => {
+        const genres = movie.genres.split(", "); // Split genres into an array
+        return genres.includes(genre); // Check if the genre is in the array
+      });
+    }
 
-  if (filteredMovies.length > 0) {
-    filteredMovies.forEach((movie) => {
-      const movieCard = document.createElement("div");
-      movieCard.classList.add("movie-card");
+    if (filteredMovies.length > 0) {
+      filteredMovies.forEach((movie) => {
+        const movieCard = document.createElement("div");
+        movieCard.classList.add("movie-card");
 
-      // Movie title and image
-      movieCard.innerHTML = `
+        // Movie title and image
+        movieCard.innerHTML = `
               <img src="${movie.image}" alt="${movie.title}" width="150">
               <h3 class="movie-title">${movie.title}</h3>
               <p class="movie-description" style="display: none;">${movie.description}</p>
           `;
 
-      // Add click event to toggle description
-      const movieTitle = movieCard.querySelector(".movie-title");
-      const movieDescription = movieCard.querySelector(".movie-description");
+        // Add click event to toggle description
+        const movieTitle = movieCard.querySelector(".movie-title");
+        const movieDescription = movieCard.querySelector(".movie-description");
 
-      movieTitle.addEventListener("click", () => {
-        if (movieDescription.style.display === "none") {
-          movieDescription.style.display = "block";
-        } else {
-          movieDescription.style.display = "none";
-        }
+        movieTitle.addEventListener("click", () => {
+          if (movieDescription.style.display === "none") {
+            movieDescription.style.display = "block";
+          } else {
+            movieDescription.style.display = "none";
+          }
+        });
+
+        movieList.appendChild(movieCard);
       });
+    } else {
+      movieList.innerHTML = "<p>No movies found in this genre.</p>";
+    }
+  });
 
-      movieList.appendChild(movieCard);
-    });
-  } else {
-    movieList.innerHTML = "<p>No movies found in this genre.</p>";
-  }
-});
+//login logic
 
 let usernameInput = document.getElementById("username");
 let passwordInput = document.getElementById("password");
@@ -206,9 +211,9 @@ document
       usernameInput.focus();
     }
   });
-document
-  .getElementById("signupForm")
-  .addEventListener("submit", function (event) {
+const signupForm = document.getElementById("signupForm");
+if (signupForm !== null)
+  signupForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const fullname = document.getElementById("fullname").value;
@@ -232,7 +237,9 @@ document
       window.location.href = "index.html";
     }
   });
+//end login logic
 
+// Sample movie data (replace with data from backend later)
 const moviesAndDesc = [
   {
     title: "Mad Max: Fury Road",
@@ -541,6 +548,7 @@ const moviesAndDesc = [
       "A timeless love story about a young couple whose relationship is tested by class differences and war.",
   },
 ];
+//end sample data
 
 // Sample watchlist data (replace with data from your backend)
 const watchlist = [
