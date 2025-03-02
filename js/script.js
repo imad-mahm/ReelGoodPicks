@@ -136,9 +136,9 @@ if (genreTitle !== null && movieList !== null)
     let filteredMovies;
 
     if (genre === "All") {
-      filteredMovies = movies;
+      filteredMovies = moviesAndDesc;
     } else {
-      filteredMovies = movies.filter((movie) => {
+      filteredMovies = moviesAndDesc.filter((movie) => {
         const genres = movie.genres.split(", "); // Split genres into an array
         return genres.includes(genre); // Check if the genre is in the array
       });
@@ -153,20 +153,20 @@ if (genreTitle !== null && movieList !== null)
         movieCard.innerHTML = `
               <img src="${movie.image}" alt="${movie.title}" width="150">
               <h3 class="movie-title">${movie.title}</h3>
-              <p class="movie-description" style="display: none;">${movie.description}</p>
+              <p class="movie-description">${movie.description}</p>
           `;
 
         // Add click event to toggle description
-        const movieTitle = movieCard.querySelector(".movie-title");
-        const movieDescription = movieCard.querySelector(".movie-description");
+        // const movieTitle = movieCard.querySelector(".movie-title");
+        // const movieDescription = movieCard.querySelector(".movie-description");
 
-        movieTitle.addEventListener("click", () => {
-          if (movieDescription.style.display === "none") {
-            movieDescription.style.display = "block";
-          } else {
-            movieDescription.style.display = "none";
-          }
-        });
+        // movieTitle.addEventListener("mouseover", () => {
+        //   if (movieDescription.style.display === "none") {
+        //     movieDescription.style.display = "block";
+        //   } else {
+        //     movieDescription.style.display = "none";
+        //   }
+        // });
 
         movieList.appendChild(movieCard);
       });
@@ -377,13 +377,6 @@ const moviesAndDesc = [
       "An inspiring drama based on the true story of Chris Gardner, who overcomes homelessness to achieve success.",
   },
   {
-    title: "The Fault in Our Stars",
-    genres: "Drama, Romance",
-    image: "images/faultinourstars.jpg",
-    description:
-      "A touching romance about two teenagers with cancer who fall in love and embark on a life-changing journey.",
-  },
-  {
     title: "Interstellar",
     genres: "Drama, Sci-Fi",
     image: "images/interstellar.jpg",
@@ -582,4 +575,19 @@ function removeFromWatchlist(movieId) {
     watchlist.splice(index, 1);
     renderWatchlist();
   }
+}
+
+function recommendMovie() {
+  const randomIndex = Math.floor(Math.random() * moviesAndDesc.length);
+  const randomMovie = moviesAndDesc[randomIndex];
+
+  const resultElement = document.getElementById("movie-result");
+  resultElement.innerHTML = `
+    <div class="movie-card">
+      <img src="${randomMovie.image}" alt="${randomMovie.title}" class="movie-image">
+      <h3>${randomMovie.title}</h3>
+      <p><strong>Genres:</strong> ${randomMovie.genres}</p>
+      <p><strong>Description:</strong> ${randomMovie.description}</p>
+    </div>
+  `;
 }

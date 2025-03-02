@@ -285,7 +285,7 @@ label {
 .main-content {
   margin-top: 30px;
   border: none;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -481,4 +481,74 @@ label {
   color: white;
   font-size: 20px;
   font-weight: bold;
+}
+
+#movieList {
+  display: grid;
+
+  grid-template-columns: repeat(3, 300px);
+  gap: 10px;
+  margin-bottom: 100px;
+}
+
+.movie-card {
+  border: 2px solid #161616;
+  border-radius: 20px;
+  width: 300px;
+  min-height: 350px;
+  height: fit-content;
+  background-color: #aa8800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  text-align: center;
+  position: relative; /* Needed for smooth transitions */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+
+.movie-card img {
+  width: 125px;
+  height: 200px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 20px rgba(255, 204, 0, 0.5);
+}
+
+.movie-card h3 {
+  font-size: 1.2em;
+  color: #121212;
+  margin-top: 20px;
+}
+
+.movie-card:hover {
+  transform: scale(1.1); /* Scale up the card */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  z-index: 1; /* Bring the card to the front */
+}
+
+.movie-card img,
+.movie-card h3 {
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for image and title */
+}
+
+.movie-card:hover img,
+.movie-card:hover h3 {
+  display: none; /* Fade out the image and title */
+  transform: translateY(-20px); /* Optional: Move them up slightly */
+}
+
+.movie-card p {
+  display: none; /* Start hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for description */
+  font-size: 1em;
+  color: #121212;
+  text-align: center;
+  width: 80%; /* Adjust as needed */
+}
+
+.movie-card:hover p {
+  display: block; /* Fade in the description */
 }
