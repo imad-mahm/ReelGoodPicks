@@ -1,130 +1,100 @@
-/* Reset default margin & padding */
 body,
 ul {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #121212;
-  /* Dark Cinematic Background */
   color: #ffffff;
-  /* White text for contrast */
 }
 
 body {
   overflow-y: auto;
   background-color: #121212;
-  height: 800px;
+  height: 100vh;
+  font-size: 24px;
+  z-index: -1;
+}
+
+.nav-bar {
+  background-color: #121212;
+  margin-top: -50px;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+  border-bottom: 1px solid #ffcc00;
+}
+
+.nav-bar > ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 0;
+}
+
+.nav-bar > ul > li {
+  border: none;
+  list-style-type: none;
+}
+
+.nav-bar > ul > li > a {
+  text-decoration: none;
+  color: white;
+  font-size: 23px;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+.nav-bar > ul > li > a:hover {
+  font-size: 25px;
+  color: #cea135;
+}
+.nav-bar > ul > li {
+  width: 180px;
+  text-align: center;
+}
+
+header {
+  margin-top: 50px;
+  height: fit-content;
+  top: 0;
+  width: 100%;
+  background-color: #121212;
+  color: white;
+  text-align: center;
   font-size: 24px;
 }
 
 body header h1 {
   color: white;
   font-size: 65px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 10px;
   display: flex;
-  align-content: center;
 }
-main {
+
+.index {
   background-color: #121212;
-  margin-top: 160px;
-  /* padding-top: 35px; */
   height: auto;
-}
-main h2 {
-  display: flex;
-  align-items: center;
-  margin-left: 12px;
-  color: #cea135;
-}
-
-/* Header Styling */
-header {
-  margin-top: 50px;
-  position: absolute;
-  height: 170px;
-  top: 0;
-  width: 100%;
-  background-color: #121212;
-  /* Slightly lighter black */
-  color: white;
-  /* Golden Yellow */
-  text-align: center;
-  font-size: 24px;
-}
-
-/* Navigation Bar */
-nav {
-  background-color: #121212;
-  /* Pure Black */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2;
-  padding: 10px 0;
-  height: 40px;
-}
-
-/* Make List Horizontal */
-nav ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Center items */
-  padding: 0;
-  height: 40px;
-}
-
-/* Style Navigation Items */
-li {
-  margin: 0 20px;
-  background: none; /* Remove background */
-  border: none; /* Remove border */
-  padding: 0; /* Remove padding */
-  font: inherit; /* Use the same font as the parent */
-  color: inherit; /* Use the same text color as the parent */
-  cursor: pointer;
-  list-style-type: none;
-}
-
-/* Style Navigation Links */
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  /* Golden Yellow */
-  font-size: 23px;
-  font-weight: bold;
-  /* padding: 10px 10px; */
-  transition: 0.25s;
-}
-
-nav ul li a:hover {
-  font-size: 25px;
-  color: #cea135;
-}
-nav ul li {
-  width: 180px;
-  text-align: center;
-}
-
-/* Main Content Styling */
-main {
-  /* margin-top: px; */
-  /* Prevents content from being hidden under navbar */
-  text-align: center;
   padding: 20px;
+  text-align: center;
 }
 
-/* Styling for Paragraphs */
-p {
-  font-size: 20px;
+.index h2 {
+  font-size: 1.6em;
+  color: #cea135;
+}
+
+.index p {
+  margin-top: 20px;
+  font-size: 1.5em;
   color: #d3d3d3;
-  /* Light gray for readability */
 }
 
-/* Movie Image Styling */
-img {
+.index img {
   width: 60%;
   max-width: 500px;
   border-radius: 10px;
@@ -132,14 +102,21 @@ img {
   box-shadow: 0px 0px 20px rgba(255, 204, 0, 0.5);
 }
 
-/* Responsive Design */
+.random {
+  background-color: #121212;
+  color: white;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
-  nav ul {
+  .navbar ul {
     flex-direction: column;
     text-align: center;
   }
 
-  nav ul li {
+  .navbar ul li {
     margin: 10px 0;
   }
 }
@@ -185,7 +162,7 @@ button:hover {
 .input-group {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+
   justify-content: center;
 }
 
@@ -229,32 +206,9 @@ label {
 #loginLink a {
   color: #ffcc00;
 }
-/* .logo {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
-.logo li{
-  margin-left: 0px;;
-}
 
-.logo img {
-  width: 30px; 
-  height: auto;
-  margin-right: 8px;
-  margin-left: 8px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  box-shadow:none;
-
-} */
 .dropdown {
-  margin-top: -10px;
-  position: absolute;
-  top: 5px; /* Adjust based on navbar height */
-  right: -700px;
+  margin: -28px 0;
 }
 .container {
   overflow: auto;
@@ -262,12 +216,11 @@ label {
 #login {
   margin-top: 18px;
   margin-bottom: 5px;
-  /* padding-top:0px; */
+
   padding-bottom: 0px;
   margin-right: 35px;
 }
 #btn1 {
-  /* margin-top: 8px; */
   background-color: #121212;
   border: #121212;
   font-weight: bold;
@@ -290,8 +243,8 @@ label {
 
 .reelpicks-logo {
   display: flex;
-  align-items: center; /* Aligns image and text */
-  gap: 0px; /* Adds space between the logo and text */
+  align-items: center;
+  gap: 0px;
 }
 
 .reelpicks-logo img {
@@ -305,7 +258,7 @@ label {
 }
 
 .reelpicks-logo li {
-  list-style: none; /* Removes bullet point */
+  list-style: none;
 }
 
 .reelpicks-brand {
@@ -326,11 +279,12 @@ label {
   font-weight: bold;
 }
 #dropdownMenuButtonDark {
-  color: #121212;
+  background-color: #121212;
   font-size: 20px;
 }
 .main-content {
   margin-top: 100px;
+  border: none;
 }
 
 .copyright-wrapper {
@@ -341,7 +295,7 @@ label {
   align-items: center;
   justify-content: center;
 }
-/* From Uiverse.io by Smit-Prajapati */
+/* about cards */
 .card {
   position: relative;
   width: 200px;
