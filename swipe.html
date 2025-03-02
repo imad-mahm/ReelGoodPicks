@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Swipe Game</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <style>
-        /* Add your styles for the swipe game */
+      /* Add your styles for the swipe game */
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="swipeGame" class="flex">
-        <div class="card">
-            <h2 id="movieTitle"></h2>
-            <div id="swipeButtons">
-                <button id="yesButton" class="btn">Yes</button>
-                <button id="noButton" class="btn btn-outline">No</button>
-            </div>
+      <div class="card">
+        <h2 id="movieTitle"></h2>
+        <div id="swipeButtons">
+          <button id="yesButton" class="btn">Yes</button>
+          <button id="noButton" class="btn btn-outline">No</button>
         </div>
+      </div>
     </div>
 
     <script>
-        const recommendedMovies = JSON.parse(localStorage.getItem('recommendedMovies')) || [];
-        let index = 0;
+      const recommendedMovies =
+        JSON.parse(localStorage.getItem("recommendedMovies")) || [];
+      let index = 0;
 
-        const movieTitle = document.getElementById('movieTitle');
-        const yesButton = document.getElementById('yesButton');
-        const noButton = document.getElementById('noButton');
+      const movieTitle = document.getElementById("movieTitle");
+      const yesButton = document.getElementById("yesButton");
+      const noButton = document.getElementById("noButton");
 
-        function displayMovie() {
-            if (recommendedMovies.length > 0) {
-                movieTitle.textContent = recommendedMovies[index];
-            } else {
-                movieTitle.textContent = "No movies available";
-            }
+      function displayMovie() {
+        if (recommendedMovies.length > 0) {
+          movieTitle.textContent = recommendedMovies[index];
+        } else {
+          movieTitle.textContent = "No movies available";
         }
+      }
 
-        function handleSwipe() {
-            if (index < recommendedMovies.length - 1) {
-                index++;
-                displayMovie();
-            } else {
-                alert("No more movies to recommend!");
-            }
+      function handleSwipe() {
+        if (index < recommendedMovies.length - 1) {
+          index++;
+          displayMovie();
+        } else {
+          alert("No more movies to recommend!");
         }
+      }
 
-        yesButton.addEventListener('click', handleSwipe);
-        noButton.addEventListener('click', handleSwipe);
+      yesButton.addEventListener("click", handleSwipe);
+      noButton.addEventListener("click", handleSwipe);
 
-        displayMovie(); // Display the first movie
+      displayMovie(); // Display the first movie
     </script>
-</body>
-
+  </body>
 </html>
