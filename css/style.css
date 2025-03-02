@@ -297,10 +297,10 @@ label {
 }
 /* about cards */
 .card {
+  margin: 0 10px;
   position: relative;
   width: 200px;
-  min-height: 200px;
-  height: 300px;
+  height: 200px;
   background: lightgrey;
   overflow: hidden;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -321,6 +321,7 @@ label {
 
 .logo {
   position: absolute;
+  text-align: center;
   right: 50%;
   bottom: 50%;
   transform: translate(50%, 50%);
@@ -449,10 +450,4 @@ label {
 .card:hover .box {
   bottom: -1px;
   left: -1px;
-}
-
-.card:hover .logo {
-  transform: translate(00, 00);
-  top: 20px;
-  right: 20px;
 }

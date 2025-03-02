@@ -8,6 +8,62 @@
   </head>
 
   <body>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButtonDark"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="border-radius: 20px"
+            >
+              Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+              <!-- <li><a class="dropdown-item active" href="dashboard.html">Movies</a></li> -->
+              <li>
+                <a class="dropdown-item" href="dashboard.html">Movies</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="random.html">Surprise me</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="watchlist.html">Watchlist</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="trending.html">Trending</a>
+              </li>
+              <li><a class="dropdown-item" href="test.html">Top Rated</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <header class="header">
+      <div
+        style="position: absolute; align-items: center; width: 50%; right: 10px"
+        class="d-grid gap-2 d-md-flex justify-content-md-end"
+        id="login"
+      >
+        <a href="login.html"
+          ><button class="btn btn-primary" id="btn1" type="button">
+            Login
+          </button></a
+        >
+        <a href="signup.html">
+          <button class="btn btn-primary" id="btn2" type="button">
+            Sign up
+          </button></a
+        >
+      </div>
+      <h1><b>SWIPE GAME</b></h1>
+    </header>
     <div id="swipeGame" class="flex">
       <div class="card">
         <h2 id="movieTitle"></h2>
@@ -17,37 +73,39 @@
         </div>
       </div>
     </div>
-
-    <script>
-      const recommendedMovies =
-        JSON.parse(localStorage.getItem("recommendedMovies")) || [];
-      let index = 0;
-
-      const movieTitle = document.getElementById("movieTitle");
-      const yesButton = document.getElementById("yesButton");
-      const noButton = document.getElementById("noButton");
-
-      function displayMovie() {
-        if (recommendedMovies.length > 0) {
-          movieTitle.textContent = recommendedMovies[index];
-        } else {
-          movieTitle.textContent = "No movies available";
-        }
-      }
-
-      function handleSwipe() {
-        if (index < recommendedMovies.length - 1) {
-          index++;
-          displayMovie();
-        } else {
-          alert("No more movies to recommend!");
-        }
-      }
-
-      yesButton.addEventListener("click", handleSwipe);
-      noButton.addEventListener("click", handleSwipe);
-
-      displayMovie(); // Display the first movie
-    </script>
+    <div class="copyright-wrapper">
+      &copy; 2024 Reel Good Pick &#124; All rights reserved
+    </div>
   </body>
+  <script>
+    const recommendedMovies =
+      JSON.parse(localStorage.getItem("recommendedMovies")) || [];
+    let index = 0;
+
+    const movieTitle = document.getElementById("movieTitle");
+    const yesButton = document.getElementById("yesButton");
+    const noButton = document.getElementById("noButton");
+
+    function displayMovie() {
+      if (recommendedMovies.length > 0) {
+        movieTitle.textContent = recommendedMovies[index];
+      } else {
+        movieTitle.textContent = "No movies available";
+      }
+    }
+
+    function handleSwipe() {
+      if (index < recommendedMovies.length - 1) {
+        index++;
+        displayMovie();
+      } else {
+        alert("No more movies to recommend!");
+      }
+    }
+
+    yesButton.addEventListener("click", handleSwipe);
+    noButton.addEventListener("click", handleSwipe);
+
+    displayMovie(); // Display the first movie
+  </script>
 </html>
