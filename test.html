@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Recommendation Test</title>
     <link rel="icon" type="image/x-icon" href="images/Popcorn-icon.png" />
-    <link rel="stylesheet" href="style.css" />
- <!-- Bootstrap CSS -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        .flex {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 1rem;
-        }
+      .flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 1rem;
+      }
 
-        .card {
-            padding: 1.5rem;
-            text-align: center;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
+      .card {
+        padding: 1.5rem;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
 
-        .text-xl {
-            font-size: 1.25rem;
-            font-weight: bold;
-        }
+      .text-xl {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
 
-        .space-y-2>* {
-            margin-bottom: 0.5rem;
-        }
+      .space-y-2 > * {
+        margin-bottom: 0.5rem;
+      }
 
-        .btn {
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-        }
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+      }
 
-        .btn-outline {
-            border: 1px solid #ccc;
-            background-color: transparent;
-        }
+      .btn-outline {
+        border: 1px solid #ccc;
+        background-color: transparent;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <header class="header">
+  <body>
+    <!-- <header class="header"> 
         <div class="reelpicks-navbar">
           <div class="reelpicks-logo">
               <img src="images/Popcorn-icon.png" alt="Popcorn-icon">
@@ -78,85 +78,182 @@
             <li><a class="dropdown-item" href="watchlist.html">Watchlist</a></li>
             <li><a class="dropdown-item" href="trending.html">Trending</a></li>
             <li><a class="dropdown-item" href="toprated.html">Top Rated</a></li>
-            <!-- <li><a class="dropdown-item" href="swipe.html">swipe</a></li> -->
             <li><a class="dropdown-item" href="test.html">Test Me</a></li>
           </ul>
         </div>
-      </header>
+      </header> -->
+
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Watchlist</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButtonDark"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="border-radius: 20px"
+            >
+              Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+              <!-- <li><a class="dropdown-item active" href="dashboard.html">Movies</a></li> -->
+              <li>
+                <a class="dropdown-item" href="dashboard.html">Movies</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="random.html">Surprise me</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="watchlist.html">Watchlist</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="trending.html">Trending</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="toprated.html">Top Rated</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <header class="header">
+      <div
+        style="position: absolute; align-items: center; width: 50%; right: 10px"
+        class="d-grid gap-2 d-md-flex justify-content-md-end"
+        id="login"
+      >
+        <a href="login.html"
+          ><button class="btn btn-primary" id="btn1" type="button">
+            Login
+          </button></a
+        >
+        <a href="signup.html">
+          <button class="btn btn-primary" id="btn2" type="button">
+            Sign up
+          </button></a
+        >
+      </div>
+      <h1><b>MOVIE TEST</b></h1>
+    </header>
+
     <div class="flex">
-        <div id="questionCard" class="card">
-            <h2 id="questionText" class="text-xl"></h2>
-            <div id="optionsContainer" class="space-y-2"></div>
-        </div>
+      <div id="questionCard" class="card">
+        <h2 id="questionText" class="text-xl"></h2>
+        <div id="optionsContainer" class="space-y-2"></div>
+      </div>
     </div>
 
     <script>
-        const questions = [
-            { question: "How is your mood today?", options: ["Happy", "Sad", "Excited", "Relaxed"] },
-            { question: "What is your favorite movie?", options: ["Inception", "Titanic", "Avengers", "Interstellar"] },
-            { question: "What genre do you usually enjoy?", options: ["Action", "Romance", "Sci-Fi", "Drama", "Comedy"] },
-            { question: "Do you prefer movies in Arabic or English?", options: ["Arabic", "English", "Both"] },
-            { question: "What rating do you usually look for?", options: ["7+", "8+", "9+"] }
-        ];
+      const questions = [
+        {
+          question: "How is your mood today?",
+          options: ["Happy", "Sad", "Excited", "Relaxed"],
+        },
+        {
+          question: "What is your favorite movie?",
+          options: ["Inception", "Titanic", "Avengers", "Interstellar"],
+        },
+        {
+          question: "What genre do you usually enjoy?",
+          options: ["Action", "Romance", "Sci-Fi", "Drama", "Comedy"],
+        },
+        {
+          question: "Do you prefer movies in Arabic or English?",
+          options: ["Arabic", "English", "Both"],
+        },
+        {
+          question: "What rating do you usually look for?",
+          options: ["7+", "8+", "9+"],
+        },
+      ];
 
-        const movies = {
-            Comedy: ["The Hangover", "Superbad", "عسل أسود", "Al Sayida Al Thaneya", "اللمبي 8 جيجا"],
-            Action: ["Mad Max: Fury Road", "The Dark Knight", "الجزيرة", "مهمة في تبوك"],
-            Drama: ["The Insult", "The Pursuit of Happyness", "Forrest Gump", "باب الحديد", "الطريق"],
-            Romance: ["The Notebook", "Titanic", "أنت عمري", "الخرساء"],
-            "Action-Sci-Fi": ["The Matrix", "Inception"],
-            "Comedy-Action": ["Very Big Shot"],
-            "Comedy-Drama": ["Bghamdet Ain (بغمضة عين)"]
-        };
+      const movies = {
+        Comedy: [
+          "The Hangover",
+          "Superbad",
+          "عسل أسود",
+          "Al Sayida Al Thaneya",
+          "اللمبي 8 جيجا",
+        ],
+        Action: [
+          "Mad Max: Fury Road",
+          "The Dark Knight",
+          "الجزيرة",
+          "مهمة في تبوك",
+        ],
+        Drama: [
+          "The Insult",
+          "The Pursuit of Happyness",
+          "Forrest Gump",
+          "باب الحديد",
+          "الطريق",
+        ],
+        Romance: ["The Notebook", "Titanic", "أنت عمري", "الخرساء"],
+        "Action-Sci-Fi": ["The Matrix", "Inception"],
+        "Comedy-Action": ["Very Big Shot"],
+        "Comedy-Drama": ["Bghamdet Ain (بغمضة عين)"],
+      };
 
-        let step = 0;
-        let answers = [];
+      let step = 0;
+      let answers = [];
 
-        const questionText = document.getElementById('questionText');
-        const optionsContainer = document.getElementById('optionsContainer');
+      const questionText = document.getElementById("questionText");
+      const optionsContainer = document.getElementById("optionsContainer");
 
-        function loadQuestion() {
-            if (step < questions.length) {
-                const currentQuestion = questions[step];
-                questionText.textContent = currentQuestion.question;
-                optionsContainer.innerHTML = ''; // Clear previous options
+      function loadQuestion() {
+        if (step < questions.length) {
+          const currentQuestion = questions[step];
+          questionText.textContent = currentQuestion.question;
+          optionsContainer.innerHTML = ""; // Clear previous options
 
-                currentQuestion.options.forEach(option => {
-                    const button = document.createElement('button');
-                    button.textContent = option;
-                    button.classList.add('btn');
-                    button.addEventListener('click', () => handleAnswer(option));
-                    optionsContainer.appendChild(button);
-                });
-            } else {
-                const genre = answers[2]; // Genre question index
-                alert(`Redirecting to swipe game with recommended movies for genre: ${genre}`);
-                navigateToSwipeGame(genre);
-            }
+          currentQuestion.options.forEach((option) => {
+            const button = document.createElement("button");
+            button.textContent = option;
+            button.classList.add("btn");
+            button.addEventListener("click", () => handleAnswer(option));
+            optionsContainer.appendChild(button);
+          });
+        } else {
+          const genre = answers[2]; // Genre question index
+          alert(
+            `Redirecting to swipe game with recommended movies for genre: ${genre}`
+          );
+          navigateToSwipeGame(genre);
         }
+      }
 
-        function handleAnswer(option) {
-            answers.push(option);
+      function handleAnswer(option) {
+        answers.push(option);
 
-            if (step < questions.length - 1) {
-                step++;
-                loadQuestion();
-            } else {
-                const genre = answers[2]; // Genre question
-                alert(`Redirecting to swipe game with recommended movies for genre: ${genre}`);
-                navigateToSwipeGame(genre);
-            }
+        if (step < questions.length - 1) {
+          step++;
+          loadQuestion();
+        } else {
+          const genre = answers[2]; // Genre question
+          alert(
+            `Redirecting to swipe game with recommended movies for genre: ${genre}`
+          );
+          navigateToSwipeGame(genre);
         }
+      }
 
-        function navigateToSwipeGame(genre) {
-            // Redirect to the swipe game with the movie recommendations for the selected genre
-            const recommendedMovies = movies[genre] || [];
-            localStorage.setItem('recommendedMovies', JSON.stringify(recommendedMovies));
-            window.location.href = 'swipe.html'; // Change this to the actual URL of your swipe game page
-        }
+      function navigateToSwipeGame(genre) {
+        // Redirect to the swipe game with the movie recommendations for the selected genre
+        const recommendedMovies = movies[genre] || [];
+        localStorage.setItem(
+          "recommendedMovies",
+          JSON.stringify(recommendedMovies)
+        );
+        window.location.href = "swipe.html"; // Change this to the actual URL of your swipe game page
+      }
 
-        loadQuestion(); // Load the first question
+      loadQuestion(); // Load the first question
     </script>
-</body>
-
+  </body>
 </html>
