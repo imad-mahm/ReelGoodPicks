@@ -93,19 +93,21 @@
 
     <!-- Main Content - Movies Section -->
     <main class="main-content">
-      <h2>All Movies</h2>
-      <div class="movie-grid" id="movie-grid">
-        <nav class="genre-nav">
-          <ul>
-            <li><a href="#" data-genre="all">All</a></li>
-            <li><a href="#" data-genre="comedy">Comedy</a></li>
-            <li><a href="#" data-genre="action">Action</a></li>
-            <li><a href="#" data-genre="drama">Drama</a></li>
-            <li><a href="#" data-genre="romance">Romance</a></li>
-            <li><a href="#" data-genre="sci-fi">Sci-Fi</a></li>
-          </ul>
-        </nav>
-        <!-- Movie cards will be dynamically inserted here -->
+      <ul>
+        <li><a href="genre.html?genre=All">All Movies</a></li>
+        <li><a href="genre.html?genre=Romance">Romance</a></li>
+        <li><a href="genre.html?genre=Comedy">Comedy</a></li>
+        <li><a href="genre.html?genre=Sci-Fi">Sci-Fi</a></li>
+        <li><a href="genre.html?genre=Horror">Horror</a></li>
+        <li><a href="genre.html?genre=Thriller">Thriller</a></li>
+        <li><a href="genre.html?genre=Action">Action</a></li>
+        <li><a href="genre.html?genre=Adventure">Adventure</a></li>
+        <li><a href="genre.html?genre=Drama">Drama</a></li>
+      </ul>
+
+      <div id="resultContainer" class="hidden">
+        <h2>Recommended Movies</h2>
+        <ul id="movieList"></ul>
       </div>
     </main>
   </body>
