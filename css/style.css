@@ -285,6 +285,7 @@ label {
 .main-content {
   margin-top: 30px;
   border: none;
+  height: fit-content;
   min-height: 100vh;
   text-align: center;
   display: flex;
