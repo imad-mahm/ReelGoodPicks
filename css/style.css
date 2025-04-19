@@ -616,15 +616,13 @@ label {
     margin:5px 0;
   }
   #login {
-    position: sticky; /*let it flow with the page */
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap:10px;
-    margin-top: -40px;
-    flex-wrap: wrap;
-    /* margin-bottom: 10px; */
+    align-items: flex-start;
+    gap: 0px; /* space between login and signup */
+    margin: -40px 3px;
+    /* flex-wrap: wrap; makes it responsive on smaller screens */
   }
   #btn1, #btn2 {
     font-size: 12px;
@@ -643,5 +641,11 @@ label {
   main.index img {
     width: 90%;
     height: auto;
+  }
+  .copyright-wrapper{
+    font-size: 18px;
+  }
+  .main-content{
+    padding-left: 45px;
   }
 }
