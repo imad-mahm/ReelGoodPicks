@@ -216,7 +216,6 @@ label {
 #login {
   margin-top: 18px;
   margin-bottom: 5px;
-
   padding-bottom: 0px;
   margin-right: 35px;
 }
@@ -594,78 +593,20 @@ label {
   padding: 20px;
   margin-top: -50px;
 }
-@media (max-width: 600px) {
-  body {
-    font-size: 25px;
-    text-align: center;
-    padding: 10px;
-  }
-  .nav-bar {
-    position: static;
-    padding-top: 34px;
-  }
-  .nav-bar ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 0;
-  }
-  .nav-bar ul li {
-    margin: 5px 0;
-  }
+@media (max-width: 768px) {
   #login {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 0px; /* space between login and signup */
-    margin: -40px 3px;
-    /* flex-wrap: wrap; makes it responsive on smaller screens */
-  }
-  #btn1,
-  #btn2 {
-    font-size: 12px;
-    padding: 6px 10px;
+    margin-right:0px;
+    display: flex; /* Enable flexbox to arrange buttons horizontally */
+    justify-content: center; 
+    width: 100%;
+    position: relative;
+    align-items: center; /* Vertically center the buttons */
+    
   }
 
-  header h1 {
-    font-size: 24px;
-  }
-
-  main.index h2 {
+  #btn1, #btn2 {
+    width: 48%; /* Set buttons to take up about half the width */
+    margin: 0; /* Remove any default margin */
     font-size: 18px;
-    margin: 10px 0;
-  }
-
-  main.index img {
-    width: 90%;
-    height: auto;
-  }
-  .copyright-wrapper {
-    font-size: 18px;
-  }
-  .main-content {
-    padding-left: 45px;
-  }
-}
-
-@media (max-width: 600px) {
-  .dropdown-menu {
-    display: none !important;
-    position: absolute !important; /* ensures it's not affected by flex column stacking */
-    inset: auto !important; /* avoid full-width overflow issues */
-    transform: translate3d(
-      0,
-      38px,
-      0
-    ) !important; /* match Bootstrap's default offset */
-  }
-
-  .dropdown.show .dropdown-menu {
-    display: block !important;
-  }
-
-  .nav-bar ul {
-    position: relative; /* required for the dropdown to position correctly */
   }
 }

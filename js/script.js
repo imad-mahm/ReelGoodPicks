@@ -566,6 +566,7 @@ function removeFromWatchlist(movieId) {
 }
 
 function recommendMovie() {
+  event.preventDefault();
   const randomIndex = Math.floor(Math.random() * moviesAndDesc.length);
   const randomMovie = moviesAndDesc[randomIndex];
 
