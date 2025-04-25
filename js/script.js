@@ -231,36 +231,36 @@ if (signupForm !== null)
 const moviesAndDesc = [
   {
     title: "Mad Max: Fury Road",
-    genres: "Action, Thriller",
-    image: "images/madmax.jpg",
+    genres: "Action",
+    image: "images/madmax.jfif",
     description:
       "A high-octane action thriller set in a post-apocalyptic wasteland, where Max teams up with Furiosa to escape a tyrannical leader.",
   },
   {
     title: "Avengers: Endgame",
     genres: "Action, Adventure",
-    image: "images/avengers.jpg",
+    image: "images/avengersendgame.jfif",
     description:
       "The epic conclusion to the Avengers saga, where the heroes assemble to reverse the damage caused by Thanos and restore the universe.",
   },
   {
     title: "Inception",
     genres: "Action, Sci-Fi, Thriller",
-    image: "images/inception.jpg",
+    image: "images/inception.jfif",
     description:
       "A mind-bending sci-fi thriller about a thief who enters the dreams of others to steal secrets, but is tasked with planting an idea instead.",
   },
   {
     title: "The Matrix",
     genres: "Action, Sci-Fi",
-    image: "images/matrix.jpg",
+    image: "images/matrix.jfif",
     description:
       "A groundbreaking sci-fi film about a hacker who discovers the reality of the simulated world and joins the rebellion against machines.",
   },
   {
     title: "الجزيرة",
     genres: "Action, Drama",
-    image: "images/elgazeera.jpg",
+    image: "images/elgazeera.jfif",
     description:
       "A gripping action-drama set in the Middle East, exploring themes of survival and resilience in the face of adversity.",
   },
@@ -274,28 +274,28 @@ const moviesAndDesc = [
   {
     title: "John Wick",
     genres: "Action, Thriller",
-    image: "images/johnwick.jpg",
+    image: "images/johnwick.jfif",
     description:
       "A retired hitman seeks vengeance after the death of his dog, leading to a brutal and stylish action-packed journey.",
   },
   {
     title: "Die Hard",
     genres: "Action, Thriller",
-    image: "images/diehard.jpg",
+    image: "images/diehard.jfif",
     description:
       "A New York cop battles terrorists during a Christmas party in a Los Angeles skyscraper.",
   },
   {
     title: "Mission: Impossible - Fallout",
     genres: "Action, Adventure",
-    image: "images/missionimpossible.jpg",
+    image: "images/impossible.webp",
     description:
       "Ethan Hunt and his team race against time to prevent a global catastrophe.",
   },
   {
     title: "The Dark Knight",
     genres: "Action, Crime, Drama",
-    image: "images/darkknight.jpg",
+    image: "images/darknight.webp",
     description:
       "Batman faces off against the Joker in a battle for Gotham City's soul.",
   },
@@ -303,28 +303,28 @@ const moviesAndDesc = [
   {
     title: "The Hangover",
     genres: "Comedy",
-    image: "images/hangover.jpg",
+    image: "images/hangover.jfif",
     description:
       "A hilarious comedy about a group of friends who wake up after a wild bachelor party in Las Vegas with no memory of the night before.",
   },
   {
     title: "Superbad",
     genres: "Comedy",
-    image: "images/superbad.jpg",
+    image: "images/superbad.webp",
     description:
       "A coming-of-age comedy about two high school friends trying to have one last wild night before graduation.",
   },
   {
     title: "Liar Liar",
     genres: "Comedy",
-    image: "images/liarliar.jpg",
+    image: "images/liarliar.jfif",
     description:
       "A funny tale of a lawyer who, due to his son's wish, is forced to tell the truth for 24 hours, leading to chaotic situations.",
   },
   {
     title: "عسل أسود",
     genres: "Comedy, Drama",
-    image: "images/asal_aswad.jpg",
+    image: "images/asal_aswad.jfif",
     description:
       "A heartwarming comedy-drama about a young man navigating life, love, and family in modern Egypt.",
   },
@@ -338,7 +338,7 @@ const moviesAndDesc = [
   {
     title: "Bridesmaids",
     genres: "Comedy",
-    image: "images/bridesmaids.jpg",
+    image: "images/bridesmaids.jfif",
     description:
       "A group of bridesmaids navigate the ups and downs of wedding planning, leading to hilarious and chaotic situations.",
   },
@@ -346,35 +346,35 @@ const moviesAndDesc = [
   {
     title: "باب الحديد",
     genres: "Drama",
-    image: "images/babelhadid.jpg",
+    image: "images/babelhadid.jfif",
     description:
       "A powerful drama set in Cairo's Bab El Hadid district, exploring the struggles and dreams of its inhabitants.",
   },
   {
     title: "Forrest Gump",
     genres: "Drama, Romance",
-    image: "images/forrestgump.jpg",
+    image: "images/forrestgrump.webp",
     description:
       "A heartwarming drama about a man with a low IQ who inadvertently influences several historical events in the 20th century.",
   },
   {
     title: "The Pursuit of Happyness",
     genres: "Drama",
-    image: "images/pursuit.jpg",
+    image: "images/pursuit.jfif",
     description:
       "An inspiring drama based on the true story of Chris Gardner, who overcomes homelessness to achieve success.",
   },
   {
     title: "Interstellar",
     genres: "Drama, Sci-Fi",
-    image: "images/interstellar.jpg",
+    image: "images/interstellar.jfif",
     description:
       "A visually stunning sci-fi epic about a group of astronauts traveling through a wormhole to find a new home for humanity.",
   },
   {
     title: "The Shawshank Redemption",
     genres: "Drama",
-    image: "images/shawshank.jpg",
+    image: "images/shawshank.webp",
     description:
       "A powerful drama about hope and friendship, following two prisoners as they navigate life in Shawshank Prison.",
   },
@@ -389,42 +389,42 @@ const moviesAndDesc = [
   {
     title: "Her",
     genres: "Drama, Romance, Sci-Fi",
-    image: "images/her.jpg",
+    image: "images/her.jfif",
     description:
       "A futuristic romance about a man who falls in love with an AI assistant, exploring themes of love and technology.",
   },
   {
     title: "The Martian",
     genres: "Sci-Fi, Adventure",
-    image: "images/martian.jpg",
+    image: "images/themartian.jfif",
     description:
       "A thrilling sci-fi adventure about an astronaut stranded on Mars who must use his ingenuity to survive and signal Earth.",
   },
   {
     title: "Star Wars",
     genres: "Sci-Fi, Adventure",
-    image: "images/starwars.jpg",
+    image: "images/starwars.jfif",
     description:
       "An iconic space opera about the battle between the Rebel Alliance and the evil Galactic Empire.",
   },
   {
     title: "Guardians of the Galaxy",
     genres: "Sci-Fi, Adventure, Comedy",
-    image: "images/guardians.jpg",
+    image: "images/guardians.jfif",
     description:
       "A fun and action-packed adventure about a group of misfits who team up to save the galaxy.",
   },
   {
     title: "Ex Machina",
     genres: "Sci-Fi, Thriller",
-    image: "images/exmachina.jpg",
+    image: "images/exmachina.jfif",
     description:
       "A thought-provoking sci-fi thriller about artificial intelligence and the nature of consciousness.",
   },
   {
     title: "The Conjuring",
     genres: "Horror",
-    image: "images/conjuring.jpg",
+    image: "images/conjuring.jfif",
     description:
       "A chilling horror film based on the true story of paranormal investigators Ed and Lorraine Warren.",
   },
@@ -445,14 +445,14 @@ const moviesAndDesc = [
   {
     title: "The Shining",
     genres: "Horror",
-    image: "images/shining.jpg",
+    image: "images/shining.jfif",
     description:
       "A psychological horror classic about a family's descent into madness while isolated in a haunted hotel.",
   },
   {
     title: "Hereditary",
     genres: "Horror",
-    image: "images/hereditary.jpg",
+    image: "images/hereditary.jfif",
     description:
       "A deeply unsettling horror film about a family haunted by a sinister presence after the death of their secretive grandmother.",
   },
@@ -460,35 +460,35 @@ const moviesAndDesc = [
   {
     title: "Back to the Future",
     genres: "Adventure, Sci-Fi",
-    image: "images/bttf.jpg",
+    image: "images/bttf.jfif",
     description:
       "A time-traveling adventure about a teenager who accidentally travels to the past and must ensure his parents fall in love.",
   },
   {
     title: "The Secret Life of Walter Mitty",
     genres: "Adventure, Comedy",
-    image: "images/mitty.jpg",
+    image: "images/mitty.jfif",
     description:
       "An uplifting adventure about a daydreamer who embarks on a real-life journey to find a missing photograph.",
   },
   {
     title: "Chef",
     genres: "Adventure, Comedy",
-    image: "images/chef.jpg",
+    image: "images/chef.webp",
     description:
       "A heartwarming comedy about a chef who rediscovers his passion for food and life through a cross-country food truck journey.",
   },
   {
     title: "Jumanji: Welcome to the Jungle",
     genres: "Adventure, Comedy",
-    image: "images/jumanji.jpg",
+    image: "images/jumanji.jfif",
     description:
       "A group of teenagers are transported into a video game and must complete the adventure to return to the real world.",
   },
   {
     title: "Indiana Jones and the Raiders of the Lost Ark",
     genres: "Adventure",
-    image: "images/indianajones.jpg",
+    image: "images/indianajones.jfif",
     description:
       "An iconic adventure film about archaeologist Indiana Jones as he races to find the Ark of the Covenant before the Nazis.",
   },
@@ -496,40 +496,64 @@ const moviesAndDesc = [
   {
     title: "The Fault in Our Stars",
     genres: "Romance, Drama",
-    image: "images/faultinourstars.jpg",
+    image: "images/stars.jfif",
     description:
       "A touching romance about two teenagers with cancer who fall in love and embark on a life-changing journey.",
   },
   {
-    title: "Forrest Gump",
-    genres: "Romance, Drama",
-    image: "images/forrestgump.jpg",
+    title: "Titanic",
+    genre: "Romance",
+    image: "images/titanic.jfif",
     description:
-      "A heartwarming drama about a man with a low IQ who inadvertently influences several historical events in the 20th century.",
+      "A romantic drama about a young aristocratic woman and a penniless artist who fall in love aboard the R.M.S. Titanic, only to face tragedy when the ship meets its fateful end.",
   },
   {
-    title: "Her",
-    genres: "Romance, Drama, Sci-Fi",
-    image: "images/her.jpg",
+    title: "Venom",
+    genres: "Action, Sci-Fi, Thriller",
+    image: "images/venom.jfif",
     description:
-      "A futuristic romance about a man who falls in love with an AI assistant, exploring themes of love and technology.",
+      "A dark sci-fi action film about a journalist who bonds with an alien symbiote, gaining superhuman powers while struggling to control the entity’s violent impulses.",
   },
   {
     title: "أنت عمري",
     genres: "Romance, Drama",
-    image: "images/antaomry.jpg",
+    image: "images/antaomry.jfif",
     description:
       "A romantic drama about love, sacrifice, and the enduring power of relationships.",
   },
   {
     title: "The Notebook",
     genres: "Romance, Drama",
-    image: "images/notebook.jpg",
+    image: "images/notebook.jfif",
     description:
       "A timeless love story about a young couple whose relationship is tested by class differences and war.",
   },
 ];
 //end sample data
+//for genre.html
+const urlParams = new URLSearchParams(window.location.search);
+const genre = urlParams.get('genre');
+document.getElementById("genreTitle").innerText = genre + " Movies";
+
+movieList = document.getElementById("movieList");
+
+const filtered = moviesAndDesc.filter(movie => movie.genre.includes(genre));
+
+filtered.forEach(movie => {
+  const movieCard = document.createElement("div");
+  movieCard.className = "card m-3 p-2";
+  movieCard.style.maxWidth = "400px";
+  movieCard.innerHTML = `
+    <img src="${movie.image}" class="card-img-top" alt="${movie.title}">
+    <div class="card-body">
+      <h5 class="card-title">${movie.title}</h5>
+      <p class="card-text">${movie.description}</p>
+    </div>`;
+  movieList.appendChild(movieCard);
+});
+
+
+  
 
 // Sample watchlist data (replace with data from your backend)
 const watchlist = [

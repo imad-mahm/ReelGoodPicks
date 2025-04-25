@@ -9,9 +9,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <!-- Include the JS file at the end -->
   </head>
-
   <body>
+    <!-- Header -->
     <nav class="nav-bar">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -48,48 +50,20 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Main Content - Genre Section -->
     <header class="header">
-      <!-- <div class="reelpicks-navbar">
-        <div class="reelpicks-logo">
-          <img src="images/Popcorn-icon.png" alt="Popcorn-icon" />
-          <li>
-            <a href="index.html" class="reelpicks-brand">REEL GOOD PICKS</a>
-          </li>
-        </div>
-        <h1>🎬 Movies 🎬</h1>
-        <div class="reelpicks-nav-links">
-          <a href="index.html" class="reelpicks-link">Home</a>
-          <a href="profile.html" class="reelpicks-link">Profile</a>
-          <a href="about.html" class="reelpicks-link">About Us</a>
-        </div>
-      </div> -->
-      <div
-        style="position: absolute; align-items: center; width: 50%; right: 10px"
-        class="d-grid gap-2 d-md-flex justify-content-md-end"
-        id="login"
-      >
-        <a href="login.html"
-          ><button class="btn btn-primary" id="btn1" type="button">
-            Login
-          </button></a
-        >
-        <a href="signup.html">
-          <button class="btn btn-primary" id="btn2" type="button">
-            Sign up
-          </button></a
-        >
-      </div>
-      <h1><b>MOVIES</b></h1>
+      <h1><b>Movies by Genre</b></h1>
     </header>
 
     <main class="main-content">
       <h1 id="genreTitle">Movies in this Genre</h1>
-      <div id="movieList"></div>
+      <div id="movieList" class="d-flex flex-wrap"></div>
+      <!-- Movie list container -->
     </main>
 
     <div class="copyright-wrapper">
       &copy; 2024 Reel Good Pick &#124; All rights reserved
     </div>
   </body>
-  <script src="js/script.js"></script>
 </html>
