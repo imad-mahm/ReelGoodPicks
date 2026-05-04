@@ -13,8 +13,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Query to fetch top 10 movies with rating greater than 8
-$sql = "SELECT * FROM movies WHERE rating > 8 ORDER BY rating DESC LIMIT 10";
+$sql = "SELECT * FROM MOVIES WHERE rating > 8 ORDER BY rating DESC LIMIT 10";
 $result = $conn->query($sql);
 $movies = $result->fetch_all(MYSQLI_ASSOC);
 
@@ -85,7 +84,7 @@ $movies = $result->fetch_all(MYSQLI_ASSOC);
             <img src="<?php echo htmlspecialchars($movie['POSTERURL']); ?>" alt="<?php echo htmlspecialchars($movie['TITLE']); ?>">
             <h3><?php echo $movie['RATING'] . " - " . htmlspecialchars($movie['TITLE']); ?></h3>
             <p class="movie-description"><?php echo htmlspecialchars($movie['DESCRIPTION']); ?></p>
-            <?php if(isset($_SESSION['ID'])): ?>
+            <?php if(isset($_SESSION['id'])): ?>
               <?php
                 // Check if movie is already in watchlist
                 $check_watchlist = $conn->prepare("SELECT * FROM WATCHLIST WHERE user_id = ? AND movie_id = ?");

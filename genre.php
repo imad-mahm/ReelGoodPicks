@@ -62,7 +62,7 @@ $movies = $result->fetch_all(MYSQLI_ASSOC);
       <ul>
         <li><a href="dashboard.php">Home</a></li>
         <li><a href="profile.php">Profile</a></li>
-        <li><a href="about.php">About Us</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li>
           <div class="dropdown">
             <button
@@ -150,6 +150,7 @@ $movies = $result->fetch_all(MYSQLI_ASSOC);
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

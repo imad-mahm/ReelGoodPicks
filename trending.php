@@ -14,8 +14,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch movies in descending order of box_office
-$sql = "SELECT * FROM movies ORDER BY box_office DESC";
+$sql = "SELECT * FROM MOVIES ORDER BY box_office DESC";
 $result = $conn->query($sql);
 $movies = $result->fetch_all(MYSQLI_ASSOC);
 ?>
@@ -130,5 +129,6 @@ $movies = $result->fetch_all(MYSQLI_ASSOC);
       &copy; 2025 Reel Good Pick &#124; All rights reserved
     </div>
   </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/script.js"></script>
 </html>

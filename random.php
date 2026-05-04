@@ -24,14 +24,14 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
     $sql = "SELECT m.*, GROUP_CONCAT(mg.genre SEPARATOR ', ') AS GENRES
             FROM MOVIES m
             LEFT JOIN movie_genres mg ON m.id = mg.movie_id
-            GROUP BY m.id
-            ORDER BY RAND() 
-            LIMIT 1";
+      GROUP BY m.id
+      ORDER BY RAND()
+      LIMIT 1";
     $result = $conn->query($sql);
 
     if (!$result) {
-        error_log("SQL Error: " . $conn->error);
-        echo json_encode(['error' => 'Database query failed']);
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Query error']);
         exit();
     }
 
@@ -46,8 +46,9 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
 
     // Return movie data as JSON
     echo json_encode([
-        'movie' => $movie,
-        'in_watchlist' => $in_watchlist
+    'success' => true,
+    'movie' => $movie,
+    'in_watchlist' => $in_watchlist
     ]);
     exit();
 }

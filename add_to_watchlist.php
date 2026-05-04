@@ -9,8 +9,8 @@ if (!isset($_SESSION['id'])) {
     exit(); // Stop further script execution after redirect
 }
 
-// Get the movie ID from the POST request and sanitize it to prevent XSS attacks
-$movie_id = htmlspecialchars($_POST['movie_id']);
+// Get the movie ID from the POST request and sanitize/validate it
+$movie_id = isset($_POST['movie_id']) ? intval($_POST['movie_id']) : null;
 
 // Database configuration
 $servername = "localhost";
@@ -24,27 +24,28 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Retrieve the user ID from the session to associate with the watchlist entry
 $user_id = $_SESSION['id'];
 
-// Prepare the SQL query to insert the movie into the watchlist for the logged-in user
-$add_to_watchlist = $conn->prepare("INSERT INTO WATCHLIST (user_id, movie_id) VALUES (?, ?)");
-
-// Bind the user ID and movie ID as parameters to the query (both integers)
-$add_to_watchlist->bind_param("ii", $user_id, $movie_id);
-
-// Execute the query to insert the movie into the watchlist
-$add_to_watchlist->execute();
-
-// Close the prepared statement to free up resources
-$add_to_watchlist->close();
+// Prepare and execute the insert; return structured response for AJAX
+$response = ['success' => false];
+if ($movie_id) {
+    $add_to_watchlist = $conn->prepare("INSERT INTO WATCHLIST (user_id, movie_id) VALUES (?, ?)");
+    $add_to_watchlist->bind_param("ii", $user_id, $movie_id);
+    $ok = $add_to_watchlist->execute();
+    $add_to_watchlist->close();
+    $response['success'] = $ok;
+}
 
 // Close the database connection after completing the operation
 $conn->close();
 
-// Get the referring page URL to redirect the user back to the previous page after adding the movie
-$referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'genre.php';
-
-// Redirect the user back to the referring page or default to 'genre.php' if no referrer is found
-header("Location: " . $referer);
-
-// Exit to ensure no further code is executed after the redirect
-exit();
+// If AJAX request, return JSON; otherwise redirect back
+$isAjax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+if ($isAjax) {
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit();
+} else {
+    $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'genre.php';
+    header("Location: " . $referer);
+    exit();
+}
 ?>

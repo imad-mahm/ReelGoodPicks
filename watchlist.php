@@ -120,6 +120,7 @@ $watchlist_movies = $result->fetch_all(MYSQLI_ASSOC);
     <div class="copyright-wrapper">
       &copy; 2025 Reel Good Pick &#124; All rights reserved
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Prepare and execute the query
-    $stmt = $conn->prepare("SELECT * FROM USER WHERE username = ?");
+    $stmt = $conn->prepare("SELECT * FROM USERS WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -43,14 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             // Password is incorrect
-            $_SESSION['error'] = "Invalid password";
-            header("Location: login.php");
+                $_SESSION['error'] = "Invalid password";
+                header("Location: login.html");
             exit();
         }
     } else {
         // User not found
         $_SESSION['error'] = "Username not found";
-        header("Location: login.php");
+            header("Location: login.html");
         exit();
     }
 

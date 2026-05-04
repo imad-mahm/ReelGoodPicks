@@ -19,7 +19,7 @@ session_start();
     "
   >
     <div class="signup-container">
-      <form id="signupForm" action = "signuplogic.php" method="POST">
+      <form id="signupForm" action="signuplogic.php" method="POST">
         <div class="input-group">
           <label for="fullname">Full Name</label>
           <input type="text" id="fullname" name="fullname" required />
@@ -37,28 +37,21 @@ session_start();
           <input type="password" id="password" name="password" required />
         </div>
         <div class="input-group">
-          <label for="confirm-password">Confirm Password</label>
-          <input
-            type="password"
-            id="confirm-password"
-            name="confirm-password"
-            required
-          />
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" required />
         </div>
         <div class="input-group">
           <label for="dob">Date of Birth</label>
           <input type="date" id="dob" name="dob" required />
         </div>
-        <button type="submit">
-          <a id="signup" href="index.html">Sign Up</a>
-        </button>
+        <button type="submit">Sign Up</button>
       </form>
       <?php if (!empty($_SESSION['error'])){ 
         echo "<p id = 'error-message' style='color: red'>". $_SESSION['error']  . "</p>";
         unset($_SESSION['error']); // Clear the error message after displaying it
       } ?> 
       <p id="loginLink">
-        Already have an account? <a href="login.php">Login</a>
+        Already have an account? <a href="login.html">Login</a>
       </p>
     </div>
 

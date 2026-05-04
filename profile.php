@@ -23,7 +23,7 @@ if ($conn->connect_error) {
 
 // Fetch user data
 $user_id = $_SESSION['id'];
-$query = "SELECT * FROM USER WHERE id = ?";
+$query = "SELECT * FROM USERS WHERE id = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -162,8 +162,8 @@ $watchlist_movies = $watchlist_result->fetch_all(MYSQLI_ASSOC);
           // Query to get user's favorite movies
           $stmt = $conn->prepare("
             SELECT m.* 
-            FROM movies m
-            INNER JOIN user_favorites uf ON m.id = uf.movie_id 
+            FROM MOVIES m
+            INNER JOIN USER_FAVORITES uf ON m.id = uf.movie_id 
             WHERE uf.user_id = ?
           ");
           $stmt->bind_param("i", $_SESSION['id']);
@@ -174,7 +174,7 @@ $watchlist_movies = $watchlist_result->fetch_all(MYSQLI_ASSOC);
           <?php if (count($favorite_movies) > 0): ?>
             <?php foreach ($favorite_movies as $movie): ?>
               <div class="movie-card">
-                <img src="<?php echo htmlspecialchars($movie['POSTERURL']); ?>" alt="<?php echo htmlspecialchars($movie['TITLEe']); ?>">
+                <img src="<?php echo htmlspecialchars($movie['POSTERURL']); ?>" alt="<?php echo htmlspecialchars($movie['TITLE']); ?>">
                 <h3><?php echo htmlspecialchars($movie['TITLE']); ?></h3>
                 <p><strong>Year:</strong> <?php echo htmlspecialchars($movie['RELEASE_YEAR']); ?></p>
                 <p><strong>Director:</strong> <?php echo htmlspecialchars($movie['DIRECTOR']); ?></p>
@@ -200,6 +200,7 @@ $watchlist_movies = $watchlist_result->fetch_all(MYSQLI_ASSOC);
       &copy; 2025 Reel Good Pick &#124; All rights reserved
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['id'])) {
-    header("Location: login.php");
+  header("Location: login.html");
     exit();
 }
 
@@ -23,7 +23,7 @@ if ($conn->connect_error) {
 
 // Fetch user data
 $user_id = $_SESSION['id'];
-$query = "SELECT * FROM USER WHERE id = ?";
+$query = "SELECT * FROM USERS WHERE id = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Username is required.";
     } else {
         // Check if username is already taken (excluding current user)
-        $check_username = $conn->prepare("SELECT id FROM USER WHERE username = ? AND id != ?");
+        $check_username = $conn->prepare("SELECT id FROM USERS WHERE username = ? AND id != ?");
         $check_username->bind_param("si", $username, $user_id);
         $check_username->execute();
         if ($check_username->get_result()->num_rows > 0) {
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             try {
                 // Update basic profile info
-                $update_profile = $conn->prepare("UPDATE USER SET fullname = ?, username = ?, bio = ? WHERE id = ?");
+                $update_profile = $conn->prepare("UPDATE USERS SET fullname = ?, username = ?, bio = ? WHERE id = ?");
                 $update_profile->bind_param("sssi", $fullname, $username, $bio, $user_id);
                 $update_profile->execute();
                 $update_profile->close();
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Handle password change if provided
                 if (!empty($current_password) && !empty($new_password) && !empty($confirm_password)) {
                     // Verify current password
-                    $verify_password = $conn->prepare("SELECT hashedpassword FROM USER WHERE id = ?");
+                    $verify_password = $conn->prepare("SELECT hashedpassword FROM USERS WHERE id = ?");
                     $verify_password->bind_param("i", $user_id);
                     $verify_password->execute();
                     $hashed_password = $verify_password->get_result()->fetch_assoc()['hashedpassword'];
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (password_verify($current_password, $hashed_password)) {
                         if ($new_password === $confirm_password) {
                             $new_hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-                            $update_password = $conn->prepare("UPDATE USER SET hashedpassword = ? WHERE id = ?");
+                            $update_password = $conn->prepare("UPDATE USERS SET hashedpassword = ? WHERE id = ?");
                             $update_password->bind_param("si", $new_hashed_password, $user_id);
                             $update_password->execute();
                             $update_password->close();
@@ -132,7 +132,7 @@ $conn->close();
       <ul>
         <li><a href="index.php">Home</a></li>
         <li><a href="profile.php">Profile</a></li>
-        <li><a href="about.php">About Us</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li>
           <div class="dropdown">
             <button
@@ -157,7 +157,7 @@ $conn->close();
               <li>
                 <a class="dropdown-item" href="toprated.php">Top Rated</a>
               </li>
-              <li><a class="dropdown-item" href="test.php">Test Me</a></li>
+              <li><a class="dropdown-item" href="test.html">Test Me</a></li>
             </ul>
           </div>
         </li>

@@ -3,7 +3,7 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['id'])) {
-    header("Location: login.php");
+    header("Location: login.html");
     exit();
 }
 
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Update bio if provided
     if (isset($_POST['bio'])) {
         $bio = trim($_POST['bio']);
-        $query = "UPDATE USER SET bio = ? WHERE id = ?";
+        $query = "UPDATE USERS SET bio = ? WHERE id = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("si", $bio, $user_id);
         $stmt->execute();
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle password change if all password fields are provided
     if (!empty($_POST['current_password']) && !empty($_POST['new_password']) && !empty($_POST['confirm_password'])) {
         // Verify current password
-        $query = "SELECT hashedpassword FROM USER WHERE id = ?";
+        $query = "SELECT hashedpassword FROM USERS WHERE id = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("i", $user_id);
         $stmt->execute();
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($_POST['new_password'] === $_POST['confirm_password']) {
                 // Update password
                 $new_password = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
-                $query = "UPDATE USER SET hashedpassword = ? WHERE id = ?";
+                $query = "UPDATE USERS SET hashedpassword = ? WHERE id = ?";
                 $stmt = $conn->prepare($query);
                 $stmt->bind_param("si", $new_password, $user_id);
                 $stmt->execute();

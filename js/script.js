@@ -11,9 +11,14 @@ $(document).ready(function () {
     $.ajax({
       url: "remove_from_watchlist.php",
       type: "POST",
+      dataType: 'json',
       data: { movie_id: movieId },
-      success: () => {
-        $(this).text("Removed!").prop("disabled", true); // Change button text and disable it
+      success: (resp) => {
+        if (resp && resp.success) {
+          $(this).text("Removed!").prop("disabled", true);
+        } else {
+          console.error('Remove failed', resp);
+        }
       },
       error: (xhr, status, error) => {
         console.error("Error:", error); // Log any error
@@ -33,9 +38,14 @@ $(document).ready(function () {
     $.ajax({
       url: "add_to_watchlist.php",
       type: "POST",
+      dataType: 'json',
       data: { movie_id: movieId },
-      success: () => {
-        $(this).text("Added!").prop("disabled", true); // Change button text and disable it
+      success: (resp) => {
+        if (resp && resp.success) {
+          $(this).text("Added!").prop("disabled", true);
+        } else {
+          console.error('Add failed', resp);
+        }
       },
       error: (xhr, status, error) => {
         console.error("Error:", error); // Log any error

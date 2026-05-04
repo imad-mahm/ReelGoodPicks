@@ -11,7 +11,8 @@ if (!isset($_SESSION['id'])) {
 
 // Get the movie ID from the POST request and sanitize it to prevent XSS attacks
 // If no movie ID is provided, set it to null
-$movie_id = isset($_POST['movie_id']) ? htmlspecialchars($_POST['movie_id']) : null;
+// Validate movie id
+$movie_id = isset($_POST['movie_id']) ? intval($_POST['movie_id']) : null;
 
 // Database configuration
 $servername = "localhost"; // Database server name
@@ -26,26 +27,28 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 $user_id = $_SESSION['id'];
 
 // Prepare the SQL query to remove the movie from the user's watchlist
-$remove_from_watchlist = $conn->prepare("DELETE FROM WATCHLIST WHERE user_id = ? AND movie_id = ?");
-
-// Bind the user ID and movie ID as parameters to the query (both integers)
-$remove_from_watchlist->bind_param("ii", $user_id, $movie_id);
-
-// Execute the query to remove the movie from the watchlist
-$remove_from_watchlist->execute();
-
-// Close the prepared statement to free up resources
-$remove_from_watchlist->close();
+$response = ['success' => false];
+if ($movie_id) {
+    $remove_from_watchlist = $conn->prepare("DELETE FROM WATCHLIST WHERE user_id = ? AND movie_id = ?");
+    $remove_from_watchlist->bind_param("ii", $user_id, $movie_id);
+    $ok = $remove_from_watchlist->execute();
+    $remove_from_watchlist->close();
+    $response['success'] = $ok;
+}
 
 // Close the database connection after completing the operation
 $conn->close();
 
 // Get the referring page URL so that the user can be redirected back to where they came from
-$referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'genre.php';
-
-// Redirect the user back to the referring page or default to 'genre.php' if no referrer is found
-header("Location: " . $referer);
-
-// Exit the script to prevent further code from executing after the redirect
-exit();
+// If AJAX request, return JSON; otherwise redirect back
+$isAjax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+if ($isAjax) {
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit();
+} else {
+    $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'genre.php';
+    header("Location: " . $referer);
+    exit();
+}
 ?>
